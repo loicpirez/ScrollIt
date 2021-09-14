@@ -199,17 +199,17 @@ function scroll (direction, total, closestScrollable) {
         closestScrollable.node.scrollTop += closestScrollable.maxHeight;
 
       // check if this is getting bigger
-      if (closestScrollable.maxElement.clientHeight == previousMaxElemHeight) {
+      // if (closestScrollable.maxElement.clientHeight == previousMaxElemHeight) {
 
-        // we are stuck
-        if (++stuckCounter >= STUCK_RETRIES) {
-          finishScrolling();
-          imStuck(safeCounter, appendix);
-        }
-      } else {
-        // reset stuck counter if progress goes
-        stuckCounter = 0;
-      }
+      //   // we are stuck
+      //   if (++stuckCounter >= STUCK_RETRIES) {
+      //     finishScrolling();
+      //     imStuck(safeCounter, appendix);
+      //   }
+      // } else {
+      //   // reset stuck counter if progress goes
+      //   stuckCounter = 0;
+      // }
     }
     // scrolling window by default
     else {
@@ -223,15 +223,15 @@ function scroll (direction, total, closestScrollable) {
         window.scrollTo(0, helpers.getWindowHeight());
 
         // check for stucking
-        if ( helpers.getWindowHeight() == previousWindowHeight ) {
-          if (++stuckCounter >= STUCK_RETRIES) {
-            finishScrolling();
-            imStuck(safeCounter, appendix);
-          }
-        } else {
-          // reset stuck counter if progress goes
-          stuckCounter = 0;
-        }
+        // if ( helpers.getWindowHeight() == previousWindowHeight ) {
+        //   if (++stuckCounter >= STUCK_RETRIES) {
+        //     finishScrolling();
+        //     imStuck(safeCounter, appendix);
+        //   }
+        // } else {
+        //   // reset stuck counter if progress goes
+        //   stuckCounter = 0;
+        // }
     }
 
     // increment iterator if loop is finite
